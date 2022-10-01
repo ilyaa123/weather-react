@@ -1,38 +1,172 @@
-.App {
-  text-align: center;
+.Main{
+  height: 100vh;
+  padding: 24px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.CardList{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 24px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Select{
+  margin-bottom: 24px;
+  width: 100%;
+  padding: 10px 16px;
+  background-color: #fff;
+  border: 1px solid #3A8AC0;
+  border-radius: 5px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.InputWrap{
+  display: flex;
+  height: 40px;
+  border-radius: 12px;
+  box-shadow: 3px 3px 12px 1px rgba(0, 0, 0, .25);
+  margin-bottom: 24px;
+}
+.Input{
+  width: 80%;
+  padding: 4px 8px;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  background-color: #3A8AC0;
+  font-size: 18px;
+  color: #fff;
+  border: none;
+  outline: none;
+}
+.Button{
+  width: 20%;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  background-color: #fff;
+  border: 1px solid #3A8AC0;
+  transition: all 0.36s ease-in-out;
+  cursor: pointer;
+}
+.Button:hover{
+  border: 1px solid #5da4d2;
+}
+.Button:active{
+  background-color: #3A8AC0;
+  color: #fff;
+}
+.Card{
+  width: 200px;
+  height: fit-content;
+  padding: 12px;
+  border-radius: 12px;
+  background-color: #3A8AC0;
+  font-size: 14px;
+  color: #fff;
+  box-shadow: 3px 3px 12px 1px rgba(0, 0, 0, .25);
+}
+.ActionButtonWrap{
+  display: flex;
+  justify-content: flex-end;
+}
+.DeleteCity{
+  padding: 5px 10px;
+  background-color: #fff;
+  border: 1px solid #3A8AC0;
+  cursor: pointer;
+}
+.ActionButton{
+  padding: 5px 10px;
+  background-color: #fff;
+  border: 1px solid #3A8AC0;
+  cursor: pointer;
+}
+.MainInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Title{
+  font-size: 24px;
+  font-weight: 500;
+}
+.Description{
+  margin-top: 4px;
+  font-size: 16px;
+}
+.Temperature{
+  margin-top: 12px;
+  font-size: 40px;
+  font-weight: 500;
+}
+.Temperature::after{
+  content: '°';
+}
+.Information{
+  margin-top: 12px;
+}
+.Information > div{
+  margin-top: 4px;
+}
+.SingleCityWrap{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5vh;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.DailyCards{
+  padding: 20px;
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: scroll;
+  max-width: 80%;
+}
+.DailyCards::-webkit-scrollbar{
+  width: 12px;
+}
+.DailyCards::-webkit-scrollbar-thumb{
+  background-color: #3A8AC0;
+}
+.DailyCards{
+  scrollbar-width: thin;
+  scrollbar-color: #3A8AC0 #fff;
+}
+.DailyCard{
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-width: 160px;
+  background-color: #3A8AC0;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #fff;
+  box-shadow: 3px 3px 12px 1px rgba(0, 0, 0, .25);
+  margin-left: 8px;
+  margin-bottom: 20px;
 }
-
-.App-link {
-  color: #61dafb;
+.DailyCard:first-child{
+  margin-left: 240px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.DailyDay{
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+DailyDay:first-child{
+  margin-bottom: 0;
+}
+.DailyTemp{
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.DailyDesc{
+  font-size: 16px;
+  font-weight: 600;
+}
+.GoBack{
+  color: #fff;
+  margin-bottom: 24px;
+  font-size: 18px;
 }

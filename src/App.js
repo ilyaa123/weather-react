@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 import './App.css';
 
+import { useCitiesList } from './hooks/useCitiesList.js';
+
+import { Home } from './Home/Home';
+import { SingleCity } from './components/SingleCity';
+
+export const GlobalContext = React.createContext();
+
 function App() {
+  const [state, dispatch] = useCitiesList();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalContext.Provider value={{state, dispatch}}>
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/city/:city' element={<SingleCity />} />
+      </Routes>
+    </BrowserRouter>
+    </GlobalContext.Provider>
   );
 }
 
